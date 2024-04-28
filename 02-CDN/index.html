@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReactJS Components</title>
+  <!-- ReactJS CDN links -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.production.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script>
+    // MainHeading component
+    const MainHeading = () => {
+      return React.createElement('h1', { style: { textAlign: 'center', marginTop: '20px', color: '#1E90FF' } }, 'Topics covered');
+    };
+
+    // FirstDiv component
+    const FirstDiv = () => {
+      return React.createElement('div', { style: { maxWidth: '600px', margin: '0 auto', padding: '20px', backgroundColor: '#FFD700' } },
+        React.createElement('p', { style: { color: '#333' } }, 'The following is a list of all the topics we cover in the MDN learning area.')
+      );
+    };
+
+    // SecondDiv component
+    const SecondDiv = () => {
+      return React.createElement('div', { style: { maxWidth: '600px', margin: '20px auto', padding: '20px', backgroundColor: '#32CD32' } },
+      React.createElement('a', { href: 'https://developer.mozilla.org/en-US/docs/Learn', style: { color: '#1E90FF', textDecoration: 'underline' } }, 'Getting started with the web'),
+      React.createElement('p', { style: { color: '#333' } }, 'Provides a practical introduction to web development for complete beginners. ',
+          )
+      );
+    };
+
+    // Third Div component
+    const ThirdDiv = () => {
+        return React.createElement('div', { style: { maxWidth: '600px', margin: '20px auto', padding: '20px', backgroundColor: '#32CD32' } },
+      React.createElement('a', { href: 'https://developer.mozilla.org/en-US/docs/Learn/HTML', style: { color: '#1E90FF', textDecoration: 'underline' } }, 'HTML - Structuring the web'),
+      React.createElement('p', { style: { color: '#333' } }, 'HTML is the language that we use to structure the different parts of our content and define what their meaning or purpose is. This topic teaches HTML in detail',
+          )
+      );
+    };
+
+    // last Div component
+    const LastDiv = () => {
+        return React.createElement('div', { style: { maxWidth: '600px', margin: '20px auto', padding: '20px', backgroundColor: '#32CD32' } },
+      React.createElement('a', { href: 'https://developer.mozilla.org/en-US/docs/Learn/CSS', style: { color: '#1E90FF', textDecoration: 'underline' } }, 'CSS - Styling the web'),
+      React.createElement('p', { style: { color: '#333' } }, 'CSS is the language that we use to control our web content style and layout, as well as adding behavior like animation. This topic provides comprehensive coverage of CSS.')
+      );
+    };
+
+
+
+
+    // App component
+    const App = () => {
+      return React.createElement('div', null,
+        React.createElement(MainHeading),
+        React.createElement(FirstDiv),
+        React.createElement(SecondDiv),
+        React.createElement(ThirdDiv),
+        React.createElement(LastDiv)
+      );
+    };
+
+    // Render the App component
+    ReactDOM.render(
+      React.createElement(App),
+      document.getElementById('root')
+    );
+  </script>
+</body>
+</html>
